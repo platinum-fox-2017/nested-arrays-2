@@ -9,10 +9,19 @@ let roster = [
   [22, 'MK DiBoux ', 'Small Forward ', [11, 0, 23, 17, 0] ]
 ]
 
+var hasil=[]
 // [[roster[0][0], roster[1][0]], [roster[0][1], roster[1][1]],...
 
 function convert_roster_format (nestedArray) {
-  // your convert code here
+  for(let i=1;i<nestedArray.length;i++){
+    var obj={}
+    for(let j=0;j<nestedArray[i].length;j++){
+      obj[nestedArray[0][j]]=nestedArray[i][j]
+    }
+    hasil.push(obj)
+  }
+
+  return hasil
 }
 
 let object_roster = convert_roster_format(roster)
