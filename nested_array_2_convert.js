@@ -15,10 +15,10 @@ function convert_roster_format (nestedArray) {
   var arrOfObj=[];
   for(let i=1; i<roster.length; i++) {
     let person = {
-      Number: roster[i][0],
-      Name: roster[i][1],
-      Position : roster[i][2],
-      PointsPerGame: roster[i][3]
+      [roster[0][0]] : roster[i][0],
+      [roster[0][1]] : roster[i][1],
+      [roster[0][2]] : roster[i][2],
+      [roster[0][3]] : roster[i][3]
     }
     arrOfObj.push(person);
   }
