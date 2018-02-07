@@ -18,7 +18,7 @@ function convert_roster_format (nestedArray) {
     objek[roster[0][0]] = roster[i][0];
     objek[roster[0][1]] = roster[i][1];
     objek[roster[0][2]] = roster[i][2];
-    objek[roster[0][3]] = roster[i][3];
+    objek[roster[0][3]] = roster[i][3]; 
      
     newArray.push(objek);
   }
