@@ -13,8 +13,14 @@ let roster = [
 
 function convert_roster_format (nestedArray) {
   let arrToObj = [];
+  
   for(let i=1; i<nestedArray.length; i++){
-    arrToObj.push({'Number': nestedArray[i][0], 'Name': nestedArray[i][1], 'Position': nestedArray[i][2], 'Points per Game': nestedArray[i][3]});
+    let obj = {};
+    obj[nestedArray[0][0]] = nestedArray[i][0],
+    obj[nestedArray[0][1]] = nestedArray[i][1], 
+    obj[nestedArray[0][2]] = nestedArray[i][2], 
+    obj[nestedArray[0][3]] = nestedArray[i][3];
+    arrToObj.push(obj);
   }
   return arrToObj;
 }
