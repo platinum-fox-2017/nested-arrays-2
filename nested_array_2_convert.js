@@ -13,13 +13,13 @@ let roster = [
 
 function convert_roster_format (nestedArray) {
   var hasil = []
-  var dataObj = {}
   var temp = nestedArray[0]
 
-  for(var i=0; i<temp.length; i++){
+  for(var i=1; i<temp.length; i++){
+    var dataObj = {}
+    for(var j=0; j<temp.length; j++){
 
-    for(var j=1; j<temp.length; j++){
-      dataObj[temp[i]] = nestedArray[j][i]
+      dataObj[temp[j]] = nestedArray[i][j]
     }
     hasil.push(dataObj)
   }
