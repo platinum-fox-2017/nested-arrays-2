@@ -20,23 +20,11 @@ function convert_roster_format (nestedArray) {
   var arrHasil = [];
   
   for (var i = 1; i < roster.length; i++) { // 6
+    
     var emptyObj = {};
     for (var j = 0; j < roster[i].length; j++) { // 4
-      debugger
-      var nomor = roster[0][0];
-      var nama = roster[0][1];
-      var posisi = roster[0][2];
-      var points = roster[0][3];  
       
-      debugger
-      emptyObj[nomor] = roster[i][j];
-      j++;
-      emptyObj[nama] = roster[i][j];
-      j++;
-      emptyObj[posisi] = roster[i][j];
-      j++;
-      emptyObj[points] = roster[i][j];
-      debugger
+      emptyObj[roster[0][j]] = roster[i][j];
       
     }
     arrHasil.push(emptyObj);
@@ -48,7 +36,7 @@ function convert_roster_format (nestedArray) {
 
 let object_roster = convert_roster_format(roster)
 
-console.log(object_roster[2])
+console.log(object_roster[2]);
 
 
 // => { "Number": 31, "Name": "Harvey Kay", "Position": "Shooting Guard", "Points per Game": [0, 30, 16, 0, 25] }
@@ -58,3 +46,28 @@ console.log(object_roster[0]['Name'] == 'Joe Schmo') // outputs true
 module.exports = {
   convert_roster_format
 }
+
+/*
+
+[ { Number: 12,
+    Name: 'Joe Schmo',
+    Position: 'Center',
+    'Points per Game': [ 14, 32, 7, 0, 23 ] },
+  { Number: 9,
+    Name: 'Ms. Buckets',
+    Position: 'Point Guard',
+    'Points per Game': [ 19, 0, 11, 22, 0 ] },
+  { Number: 31,
+    Name: 'Harvey Kay',
+    Position: 'Shooting Guard',
+    'Points per Game': [ 0, 30, 16, 0, 25 ] },
+  { Number: 7,
+    Name: 'Sally Talls',
+    Position: 'Power Forward ',
+    'Points per Game': [ 18, 29, 26, 31, 19 ] },
+  { Number: 22,
+    Name: 'MK DiBoux ',
+    Position: 'Small Forward ',
+    'Points per Game': [ 11, 0, 23, 17, 0 ] } ]
+
+*/
